@@ -1,0 +1,74 @@
+#welcome and name input
+
+print("Welcome to my quiz, Please enter your name")
+userName = input("your name: ")
+score = 0
+print(f"Hi, {userName} You will be asked 3 questions, this quiz is multiple choice so you can select your answer")
+print()
+
+#Question 1
+print("Question 1: Which planet is closest to the sun?")
+print("A) Venus")
+print("B) Mercury")
+print("C) Jupiter")
+print("D) Saturn")
+answer1 = input("Your answer (A/B/C/D): ").upper()
+
+if answer1 == "B":
+    score += 1
+
+print() #space between questions
+
+#Question 2
+print("Question 2: What is the capital of Peru?")
+print("A) Madrid")
+print("B) Berlin")
+print("C) Lima")
+print("D) Santiago")
+answer2 = input("Your answer (A/B/C/D): ").upper()
+
+if answer2 == "C":
+    score += 1
+
+print() #another space
+
+#Question 3
+print("Question 3: How many times have AC Milan won the European Cup/Champions League?")
+print("A) 0")
+print("B) 3")
+print("C) 5")
+print("D) 7")
+answer3 = input("Your answer (A/B/C/D): ").upper()
+
+if answer3 == "D":
+    score += 1
+
+print() #last space
+print(f"You have completed the quiz! {userName}, your score total is {score} out of 3!")
+
+#Leaderboard Section
+
+file_name = "leaderboard.txt"
+
+# 1. Save the new score to the file
+with open(file_name, "a") as file:
+    file.write(f"{userName},{score}\n")
+
+# 2. Load all scores from the file
+leaderboard = []
+
+with open(file_name, "r") as file:
+    for line in file:
+        line = line.strip()
+        if line == "":
+            continue
+        name_part, score_part = line.split(",")
+        leaderboard.append((name_part, int(score_part)))
+
+# 3. Sort leaderboard by score (highest first)
+leaderboard.sort(key=lambda entry: entry[1], reverse=True)
+
+# 4. Display leaderboard
+print("Leaderboard (highest scores first):")
+for name, score_value in leaderboard:
+    print(f"{name}: {score_value}")
