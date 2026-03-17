@@ -43,8 +43,31 @@ answer3 = input("Your answer (A/B/C/D): ").upper()
 if answer3 == "D":
     score += 1
 
+#Question 4
+print("Question 4: What is currently the worlds most populus nation")
+print("A) USA")
+print("B) Indonesia")
+print("C) China")
+print("D) India")
+answer4 = input("Your answer (A/B/C/D): ").upper()
+
+if answer4 == "D":
+    score += 1
+
+#Question 5
+print("Question 5: At what temperature (celcius) does H20 transition from a liquid to a solid?")
+print("A) 0")
+print("B) 3")
+print("C) 5")
+print("D) 7")
+answer5 = input("Your answer (A/B/C/D): ").upper()
+
+if answer5 == "A":
+    score += 1
+
+
 print() #last space
-print(f"You have completed the quiz! {userName}, your score total is {score} out of 3!")
+print(f"You have completed the quiz! {userName}, your score total is {score} out of 5!")
 
 # Leaderboard Section
 
