@@ -50,11 +50,11 @@ print(f"You have completed the quiz! {userName}, your score total is {score} out
 
 file_name = "leaderboard.txt"
 
-# 1. Save the new score to the file
+#Save the new score to the file
 with open(file_name, "a") as file:
     file.write(f"{userName},{score}\n")
 
-# 2. Load all scores from the file
+# Load all scores from the file
 leaderboard = []
 
 with open(file_name, "r") as file:
@@ -65,10 +65,10 @@ with open(file_name, "r") as file:
         name_part, score_part = line.split(",")
         leaderboard.append((name_part, int(score_part)))
 
-# 3. Sort leaderboard by score (highest first)
+# Sort leaderboard by score (highest first)
 leaderboard.sort(key=lambda entry: entry[1], reverse=True)
 
-# 4. Display leaderboard
+# Display leaderboard
 print("Leaderboard (highest scores first):")
 for name, score_value in leaderboard:
     print(f"{name}: {score_value}")
