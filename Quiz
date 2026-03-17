@@ -1,4 +1,4 @@
-#welcome and name input
+# welcome and name input
 
 print("Welcome to my quiz, Please enter your name")
 userName = input("your name: ")
@@ -17,7 +17,7 @@ answer1 = input("Your answer (A/B/C/D): ").upper()
 if answer1 == "B":
     score += 1
 
-print() #space between questions
+print() # space between questions
 
 #Question 2
 print("Question 2: What is the capital of Peru?")
@@ -30,7 +30,7 @@ answer2 = input("Your answer (A/B/C/D): ").upper()
 if answer2 == "C":
     score += 1
 
-print() #another space
+print() # another space
 
 #Question 3
 print("Question 3: How many times have AC Milan won the European Cup/Champions League?")
@@ -46,15 +46,15 @@ if answer3 == "D":
 print() #last space
 print(f"You have completed the quiz! {userName}, your score total is {score} out of 3!")
 
-#Leaderboard Section
+# Leaderboard Section
 
 file_name = "leaderboard.txt"
 
-# 1. Save the new score to the file
+# Save the new score to the file
 with open(file_name, "a") as file:
     file.write(f"{userName},{score}\n")
 
-# 2. Load all scores from the file
+# Load all scores from the file
 leaderboard = []
 
 with open(file_name, "r") as file:
@@ -65,10 +65,10 @@ with open(file_name, "r") as file:
         name_part, score_part = line.split(",")
         leaderboard.append((name_part, int(score_part)))
 
-# 3. Sort leaderboard by score (highest first)
+# Sort leaderboard by score (highest first)
 leaderboard.sort(key=lambda entry: entry[1], reverse=True)
 
-# 4. Display leaderboard
+# Display leaderboard
 print("Leaderboard (highest scores first):")
 for name, score_value in leaderboard:
     print(f"{name}: {score_value}")
