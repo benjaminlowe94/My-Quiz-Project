@@ -44,7 +44,7 @@ if answer3 == "D":
     score += 1
 
 #Question 4
-print("Question 4: What is currently the worlds most populus nation")
+print("Question 4: What is currently the worlds most populus nation?")
 print("A) USA")
 print("B) Indonesia")
 print("C) China")
